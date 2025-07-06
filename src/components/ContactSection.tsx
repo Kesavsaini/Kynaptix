@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
+import CalComp from './ui/CalComp';
+import MailButton from './MailButton';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -62,128 +64,14 @@ const ContactSection = () => {
             discover how we can help you achieve unprecedented growth.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div className="glass-effect border border-white/10 rounded-2xl p-8">
-            <div className="flex items-center mb-6">
-              <MessageCircle className="w-6 h-6 text-neon-blue mr-3" />
-              <h3 className="text-2xl font-bold text-white">Send us a message</h3>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-neon-blue"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-neon-blue"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <Input
-                  type="text"
-                  name="company"
-                  placeholder="Company Name"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-neon-blue"
-                />
-              </div>
-              
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder="Tell us about your project..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-neon-blue resize-none"
-                />
-              </div>
-              
-              <Button 
-                type="submit"
-                className="w-full bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-pink text-white py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/25"
-              >
-                <Send className="w-5 h-5 mr-2" />
-                Send Message
-              </Button>
-            </form>
-          </div>
-
-          {/* Contact Info & CTA */}
-          <div className="space-y-8">
-            {/* Contact Information */}
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="p-3 rounded-lg bg-gradient-to-r from-neon-blue/20 to-neon-purple/20">
-                    <info.icon className="w-6 h-6 text-neon-blue" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">{info.title}</h4>
-                    <p className="text-neon-blue font-medium">{info.content}</p>
-                    <p className="text-white/60 text-sm">{info.subtitle}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Quick Actions */}
-            <div className="glass-effect border border-white/10 rounded-xl p-6">
-              <h4 className="text-white font-semibold mb-4 flex items-center">
-                <Calendar className="w-5 h-5 text-neon-purple mr-2" />
-                Quick Actions
-              </h4>
-              <div className="space-y-3">
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start border-white/20 text-white hover:bg-white/10"
-                >
-                  Schedule a Free Consultation
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start border-white/20 text-white hover:bg-white/10"
-                >
-                  Download AI Readiness Guide
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start border-white/20 text-white hover:bg-white/10"
-                >
-                  View Case Studies
-                </Button>
-              </div>
-            </div>
-
-            {/* Response Time Badge */}
-            <div className="text-center p-4 glass-effect border border-white/10 rounded-xl">
-              <div className="text-neon-green font-semibold mb-1">⚡ Fast Response</div>
-              <div className="text-white/70 text-sm">We typically respond within 2 hours during business hours</div>
-            </div>
-          </div>
+        <div className=''>
+          <div className='w-full flex justify-center items-center gap-4 mb-8'>
+        <MailButton/>
         </div>
-      </div>
+        <CalComp/>
+        </div>
+     </div>
+     
     </section>
   );
 };

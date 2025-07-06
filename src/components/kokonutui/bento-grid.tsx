@@ -817,6 +817,7 @@ import {
 } from "motion/react";
 // import a from "next/a";
 import { useState, useEffect, useRef } from "react";
+import AITextLoading from "./ai-text-loading";
 
 interface BentoItem {
     id: string;
@@ -858,24 +859,24 @@ interface BentoItem {
 const bentoItems: BentoItem[] = [
     {
         id: "main",
-        title: "Building tomorrow's technology",
+        title: "AI-Powered Process Automation",
         description:
-            "We architect and develop enterprise-grade applications that scale seamlessly with cloud-native technologies and microservices.",
+            "We build AI agents to automate business tasks and workflows with intelligent decision-making.",
         href: "#",
         feature: "spotlight",
         spotlightItems: [
-            "Microservices architecture",
-            "Serverless computing",
-            "Container orchestration",
-            "API-first design",
-            "Event-driven systems",
+            "End-to-End Development",
+            "System Integration",
+            "Multi-Platform Deployment",
+            "Secure & Scalable",
+            "Continuous Optimization",
         ],
         size: "lg",
         className: "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
     },
     {
         id: "stat1",
-        title: "AI Agents & Automation",
+        title: "Custom AI Agents & Automation",
         description:
             "Intelligent agents that learn, adapt, and automate complex workflows",
         href: "#",
@@ -887,9 +888,9 @@ const bentoItems: BentoItem[] = [
     },
     {
         id: "partners",
-        title: "Trusted partners",
+        title: "Deploy Across Platforms & Tools",
         description:
-            "Working with the leading AI and cloud providers to deliver cutting-edge solutions",
+            "We develop and launch AI agents seamlessly on diverse frameworks, applications, and operational tools tailored to your workflows.",
         icons: true,
         href: "#",
         feature: "icons",
@@ -1023,18 +1024,27 @@ const IconsFeature = () => {
         <div className="grid grid-cols-3 gap-4 mt-4">
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                    <OpenAIDark className="w-7 h-7 transition-transform " />
+                    {/* <OpenAIDark className="w-7 h-7 transition-transform " /> */}
+                    <img
+                        src="/openrouter.png"
+                        alt="Openrouter Logo"
+                        className="w-8 h-8 transition-transform"/>
                 </div>
                 <span className="text-xs font-medium text-center text-neutral-400 group-hover:text-neutral-200">
-                    OpenAI
+                    OpenRouter
                 </span>
             </motion.div>
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                    <AnthropicDark className="w-7 h-7 transition-transform " />
+                    {/* <AnthropicDark className="w-7 h-7 transition-transform " /> */}
+                    <img
+                        src="/cloudflare.svg"
+                        alt="cloudflare Logo"
+                        className="w-8 h-8 transition-transform"
+                    />
                 </div>
                 <span className="text-xs font-medium text-center text-neutral-400 group-hover:text-neutral-200">
-                    Anthropic
+                    Cloudflare
                 </span>
             </motion.div>
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
@@ -1047,18 +1057,27 @@ const IconsFeature = () => {
             </motion.div>
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                    <MistralAI className="w-7 h-7 transition-transform " />
+                     <img
+                        src="/langchain.png"
+                        alt="Langchain Logo"
+                        className="w-8 h-8 transition-transform"
+                    />
                 </div>
                 <span className="text-xs font-medium text-center text-neutral-400 group-hover:text-neutral-200">
-                    Mistral
+                    Langchain
                 </span>
             </motion.div>
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
-                    <DeepSeek className="w-7 h-7 transition-transform " />
+                    {/* <DeepSeek className="w-7 h-7 transition-transform " /> */}
+                    <img
+                        src="/n8n.svg"
+                        alt="n8n Logo"
+                        className="w-8 h-8 transition-transform"
+                    />
                 </div>
                 <span className="text-xs font-medium text-center text-neutral-400 group-hover:text-neutral-200">
-                    DeepSeek
+                    n8n
                 </span>
             </motion.div>
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
@@ -1290,60 +1309,8 @@ function AIInput_Voice() {
     return (
         <div className="w-full py-4">
             <div className="relative max-w-xl w-full mx-auto flex items-center flex-col gap-2">
-                <button
-                    className={cn(
-                        "group w-16 h-16 rounded-xl flex items-center justify-center transition-colors",
-                        submitted
-                            ? "bg-none"
-                            : "bg-none hover:bg-white/10"
-                    )}
-                    type="button"
-                    onClick={handleClick}
-                >
-                    {submitted ? (
-                        <div
-                            className="w-6 h-6 rounded-sm animate-spin bg-white cursor-pointer pointer-events-auto"
-                            style={{ animationDuration: "3s" }}
-                        />
-                    ) : (
-                        <Mic className="w-6 h-6 text-white/70" />
-                    )}
-                </button>
-
-                <span
-                    className={cn(
-                        "font-mono text-sm transition-opacity duration-300",
-                        submitted ? "text-white/70" : "text-white/30"
-                    )}
-                >
-                    {formatTime(time)}
-                </span>
-
-                <div className="h-4 w-64 flex items-center justify-center gap-0.5">
-                    {[...Array(48)].map((_, i) => (
-                        <div
-                            key={`voice-bar-${i}`}
-                            className={cn(
-                                "w-0.5 rounded-full transition-all duration-300",
-                                submitted
-                                    ? "bg-white/50 animate-pulse"
-                                    : "bg-white/10 h-1"
-                            )}
-                            style={
-                                submitted && isClient
-                                    ? {
-                                          height: `${20 + Math.random() * 80}%`,
-                                          animationDelay: `${i * 0.05}s`,
-                                      }
-                                    : undefined
-                            }
-                        />
-                    ))}
-                </div>
-
-                <p className="h-4 text-xs text-white/70">
-                    {submitted ? "Listening..." : "Click to speak"}
-                </p>
+              
+                 <AITextLoading/>
             </div>
         </div>
     );
@@ -1531,14 +1498,11 @@ export default function BentoGrid() {
                             <div className="p-5">
                                 <div className="flex items-center justify-between mb-4">
                                     <h3 className="text-xl font-semibold tracking-tight text-neutral-100">
-                                        Voice Assistant
+                                        Clean Interfaces for AI
                                     </h3>
                                 </div>
                                 <p className="text-sm text-neutral-400 tracking-tight mb-4">
-                                    Interact with our AI using natural voice
-                                    commands. Experience seamless voice-driven
-                                    interactions with advanced speech
-                                    recognition.
+                                    We build sleek, purposeful interfaces that let users command, monitor, and refine AI agents with ease and precision.
                                 </p>
                                 <AIInput_Voice />
                             </div>
