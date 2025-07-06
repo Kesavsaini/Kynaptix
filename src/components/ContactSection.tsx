@@ -1,9 +1,6 @@
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Mail, Phone, MapPin} from 'lucide-react';
 import { toast } from 'sonner';
 import CalComp from './ui/CalComp';
 import MailButton from './MailButton';
@@ -18,7 +15,6 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     toast.success('Thank you! We\'ll get back to you within 24 hours.');
     setFormData({ name: '', email: '', company: '', message: '' });
   };

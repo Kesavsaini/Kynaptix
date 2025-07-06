@@ -56,10 +56,6 @@ export function AnimatedBeamComp() {
             <div ref={div4Ref} className="size-12 rounded-full neon-bg z-50">
              <SpinLogo/>
              </div>
-          {/* <Circle ref={div4Ref} className="size-16">
-            <Icons.openai />
-          </Circle> */}
-
           <Circle ref={div6Ref}>
             <Icons.zapier />
           </Circle>

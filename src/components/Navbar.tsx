@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Zap, Bot, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Menu, X} from 'lucide-react';
 import GetStarted from './other/GetStarted';
 import SpinLogo from './other/SpinLogo';
 
@@ -35,8 +34,6 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2 mr-8">
             <div className="relative">
-              {/* <Bot className="h-8 w-8 text-neon-blue animate-glow" />
-              <Sparkles className="h-3 w-3 text-neon-pink absolute -top-1 -right-1 animate-pulse" /> */}
               <img
                 src="/logo.svg"
                 alt="AI Agency Logo"
@@ -64,10 +61,6 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block ml-8">
-            {/* <Button className="bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-pink text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/25">
-              <Zap className="w-4 h-4 mr-2" />
-              Get Started
-            </Button> */}
              <GetStarted/>
           </div>
 
@@ -94,10 +87,6 @@ const Navbar = () => {
                   {item.label}
                 </a>
               ))}
-              {/* <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white w-full mt-4 rounded-full">
-                <Zap className="w-4 h-4 mr-2" />
-                Get Started
-              </Button> */}
               <GetStarted/>
             </div>
           </div>
