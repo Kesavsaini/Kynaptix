@@ -28,11 +28,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass-effect border border-white/10 mb-8 animate-slide-up">
+          {/* <div className="inline-flex items-center px-4 py-2 rounded-full glass-effect border border-white/10 mb-8 animate-slide-up">
             <Star className="w-4 h-4 text-neon-blue mr-2" />
             <span className="text-sm text-white/80">Leading AI Automation Agency</span>
             <div className="w-2 h-2 bg-neon-green rounded-full ml-2 animate-pulse"></div>
-          </div>
+          </div> */}
 
           {/* Main Headline */}
           <h1 className="text-2xl md:text-7xl font-bold mb-6 leading-tight animate-slide-up text-white" style={{ animationDelay: '0.2s' }}>

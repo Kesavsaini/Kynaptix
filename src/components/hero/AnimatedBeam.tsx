@@ -4,6 +4,7 @@ import React, { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
+import SpinLogo from "../other/SpinLogo";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -13,7 +14,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-md border-2 border-black bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-12 items-center justify-center rounded-md ",
         className,
       )}
     >
@@ -52,9 +53,13 @@ export function AnimatedBeamComp() {
           <Circle ref={div2Ref}>
             <Icons.notion />
           </Circle>
-          <Circle ref={div4Ref} className="size-16">
+            <div ref={div4Ref} className="size-12 rounded-full neon-bg z-50">
+             <SpinLogo/>
+             </div>
+          {/* <Circle ref={div4Ref} className="size-16">
             <Icons.openai />
-          </Circle>
+          </Circle> */}
+
           <Circle ref={div6Ref}>
             <Icons.zapier />
           </Circle>

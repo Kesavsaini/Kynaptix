@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Zap, Bot, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import GetStarted from './other/GetStarted';
+import SpinLogo from './other/SpinLogo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,6 +42,7 @@ const Navbar = () => {
                 alt="AI Agency Logo"
                 className="h-8 w-8"
               />
+              {/* <SpinLogo/> */}
             </div>
             <span className="text-xl font-bold text-white">
               Kynaptix
@@ -61,10 +64,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block ml-8">
-            <Button className="bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-pink text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/25">
+            {/* <Button className="bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-pink text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-blue/25">
               <Zap className="w-4 h-4 mr-2" />
               Get Started
-            </Button>
+            </Button> */}
+             <GetStarted/>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,10 +94,11 @@ const Navbar = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white w-full mt-4 rounded-full">
+              {/* <Button className="bg-gradient-to-r from-neon-blue to-neon-purple text-white w-full mt-4 rounded-full">
                 <Zap className="w-4 h-4 mr-2" />
                 Get Started
-              </Button>
+              </Button> */}
+              <GetStarted/>
             </div>
           </div>
         )}

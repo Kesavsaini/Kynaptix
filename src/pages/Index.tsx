@@ -4,13 +4,15 @@ import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import ContactSection from '@/components/ContactSection';
+import Xlink from '@/components/footer/Xlink';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className="min-h-screen bg-dark-900 text-white">
       <Navbar />
       
       <main>
+
         <HeroSection />
         <ServicesSection />
         <FeaturesSection />
@@ -18,16 +20,10 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-white/10">
-        <div className="container mx-auto px-4 text-center">
-          <div className="text-white/60 mb-4">
-            © 2024 AI Agency. All rights reserved.
-          </div>
-          <div className="flex justify-center space-x-6 text-sm text-white/40">
-            <a href="#" className="hover:text-neon-blue transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-neon-blue transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-neon-blue transition-colors">Cookie Policy</a>
-          </div>
+      <footer className="py-8 border-t border-white/10 bg-neutral-950 rounded-t-3xl">
+      
+        <div className='w-full h-full flex items-center justify-center'>
+          <Xlink/>
         </div>
       </footer>
     </div>
