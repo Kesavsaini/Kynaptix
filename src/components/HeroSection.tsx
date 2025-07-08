@@ -1,6 +1,7 @@
 import { ArrowRight, Play, Star, Zap, Bot, Cpu, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedBeamComp } from "./hero/AnimatedBeam";
+import herovid from "@/assets/herovid1.mp4"; // Adjust the path as necessary
 
 const HeroSection = () => {
   return (
@@ -15,7 +16,7 @@ const HeroSection = () => {
         muted
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/herovid1.mp4" type="video/mp4" />
+        <source src={herovid} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/50 z-10"></div>

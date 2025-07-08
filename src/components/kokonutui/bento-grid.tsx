@@ -799,6 +799,11 @@ import Google from "@/components/kokonutui/gemini";
 import OpenAIDark from "@/components/kokonutui/open-ai-dark";
 import MistralAI from "@/components/kokonutui/mistral";
 import DeepSeek from "@/components/kokonutui/deepseek";
+import openrouter from "@/assets/openrouter.png";
+import cloudflare from "@/assets/cloudflare.svg";
+import langchain from "@/assets/langchain.png";
+import n8n from "@/assets/n8n.svg";
+
 import { cn } from "@/lib/utils";
 import {
     Mic,
@@ -1026,7 +1031,7 @@ const IconsFeature = () => {
                 <div className="relative w-8 h-8 flex items-center justify-center">
                     {/* <OpenAIDark className="w-7 h-7 transition-transform " /> */}
                     <img
-                        src="/openrouter.png"
+                        src={openrouter}
                         alt="Openrouter Logo"
                         className="w-8 h-8 transition-transform"/>
                 </div>
@@ -1038,7 +1043,7 @@ const IconsFeature = () => {
                 <div className="relative w-8 h-8 flex items-center justify-center">
                     {/* <AnthropicDark className="w-7 h-7 transition-transform " /> */}
                     <img
-                        src="/cloudflare.svg"
+                        src={cloudflare}
                         alt="cloudflare Logo"
                         className="w-8 h-8 transition-transform"
                     />
@@ -1058,7 +1063,7 @@ const IconsFeature = () => {
             <motion.div className="flex flex-col items-center gap-2 p-3 rounded-xl bg-gradient-to-b from-neutral-800/80 to-neutral-800 border border-neutral-700/50 group transition-all duration-300 hover:border-neutral-600">
                 <div className="relative w-8 h-8 flex items-center justify-center">
                      <img
-                        src="/langchain.png"
+                        src={langchain}
                         alt="Langchain Logo"
                         className="w-8 h-8 transition-transform"
                     />
@@ -1071,7 +1076,7 @@ const IconsFeature = () => {
                 <div className="relative w-8 h-8 flex items-center justify-center">
                     {/* <DeepSeek className="w-7 h-7 transition-transform " /> */}
                     <img
-                        src="/n8n.svg"
+                        src={n8n}
                         alt="n8n Logo"
                         className="w-8 h-8 transition-transform"
                     />

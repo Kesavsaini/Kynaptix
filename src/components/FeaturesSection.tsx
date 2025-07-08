@@ -1,6 +1,7 @@
 import React from 'react'
 import { WobbleCard } from "./ui/wobble-card";
 import { AnimatedBeamComp } from "./hero/AnimatedBeam";
+import diamond from "@/assets/diamond.png";
 
 const FeaturesSection = () => {
   return (
@@ -30,7 +31,7 @@ const FeaturesSection = () => {
                </p>
              </div>
              <img
-               src="/diamond.png"
+               src={diamond}
                width={600}
                height={600}
                alt="linear demo image"
