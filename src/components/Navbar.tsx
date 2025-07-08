@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X} from 'lucide-react';
 import GetStarted from './other/GetStarted';
 import SpinLogo from './other/SpinLogo';
+import logo from "@/assets/logo.svg"
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-2 mr-8">
             <div className="relative">
               <img
-                src="/logo.svg"
+                src={logo}
                 alt="AI Agency Logo"
                 className="h-8 w-8"
               />
